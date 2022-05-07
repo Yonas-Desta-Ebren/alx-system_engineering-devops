@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for task 3"""
+"""Recursive function that queries the Reddit API"""
 
 
 def count_words(subreddit, word_list, word_count={}, after=None):
@@ -8,15 +8,15 @@ def count_words(subreddit, word_list, word_count={}, after=None):
     of the subreddit"""
     import requests
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json"
+    query_info = requests.get("https://www.reddit.com/r/{}/hot.json"
                             .format(subreddit),
                             params={"after": after},
-                            headers={"User-Agent": "My-User-Agent"},
+                            headers={"User-Agent": "My-Agent"},
                             allow_redirects=False)
-    if sub_info.status_code != 200:
+    if query_info.status_code != 200:
         return None
 
-    info = sub_info.json()
+    info = query_info.json()
 
     hot_l = [child.get("data").get("title")
              for child in info
