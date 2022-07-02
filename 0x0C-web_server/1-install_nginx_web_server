@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
-# Configures NGINX
-sudo apt-get update -y
-sudo apt-get install nginx -y
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-service nginx start
+# Installs Nginx with the following configurations:
+#+    Listens on port 80.
+#+    Returns a page containing "Holberton School" when queried
+#++    at the root with a curl GET request.
+
+apt-get update
+apt-get install -y nginx
+
+mkdir /var/www/html
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /var/www/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart
