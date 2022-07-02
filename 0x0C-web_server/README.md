@@ -23,10 +23,8 @@ Automating setup for a web server. We will be using ngnix for our web server.
 ```
 
 ## Author
-## :enter_belu: 
-* **elias fiseha** - [malu17](https://github.com/malu17)
-
+yonas desta
 ## :mega: Acknowledgments
 
 * alx School (providing guidance)
-[Elias fiseha]|[Twitter](https://twitter.com/eliasfiseha1) | [GitHub](https://github.com/malu17)
+[yonas desta]|[Twitter](https://) | [GitHub](https://github.com/Eldorado16)
