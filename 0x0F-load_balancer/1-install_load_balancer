@@ -12,5 +12,7 @@ backend web-backend
         balance roundrobin
         server 1990-web-01  check
         server 1990-web-02  check
-" | sudo tee -a /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+"
+echo "$CONF" >> /etc/haproxy/haproxy.cfg
+echo "ENABLED=1" >> /etc/default/haproxy
+service haproxy start
