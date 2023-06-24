@@ -41,4 +41,4 @@ file name, located in the `wp-content` directory of the application folder, was
 
 Patch involved a simple fix on the typo, removing the trailing `p`.
 
-That was all needed!
+## That was all needed!
